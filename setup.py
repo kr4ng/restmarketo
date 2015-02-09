@@ -27,10 +27,7 @@ setup(
     license='MIT License',
     install_requires=[
         'requests',
-        'iso8601',
-        'json',
-        'httplib',
-        'csv'
+        'iso8601'
     ],
     description='this is a python rest wrapper of the marketo rest api',
     long_description=long_description
