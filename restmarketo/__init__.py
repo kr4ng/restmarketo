@@ -106,6 +106,11 @@ class Client:
         
     def getLeadById(self, leadId):
         return self.call('get', 'lead/'+str(leadId)+'.json')[0]
+
+    def mergeLeads(self, winningLeadId, losingLeadId):
+        payload={}
+        payload['leadId'] = losingLeadId
+        return self.call('post', 'leads/'+str(winningLeadId)+'/merge.json?leadId='+losingLeadId, payload=json.dumps(payload))[0]
         
     def getMultipleLeadsByFilterType(self, filtertype, filtervalues, fields=None):
         params={'filterType':filtertype,
